@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='alphaParser',
-    version='0.1dev',
+    version='0.2dev',
     packages=['alphaParser'],
     url='https://github.com/mabdulqader172/alphaParser',
     license='MIT License',
