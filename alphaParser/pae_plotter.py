@@ -98,10 +98,21 @@ class PAEPlotter:
             raise Exception('AlphaParser Error: "best_model_pae.json" is missing.')
 
         # extract the json and make the matrix
-        _json_obj = open(self._dir, 'r')
-        pae_dict = json.load(_json_obj)[0]
-        _json_obj.close()
-        return self._make_pae_matrix(*[np.array(pae_dict[i]) for i in list(pae_dict.keys())[:-1]])
+        try:
+            # parsing Pre-CollabFold data
+            _json_obj = open(self._dir)
+            pae_data = json.load(_json_obj)[0]
+            _json_obj.close()
+            return self._make_pae_matrix(*[np.array(pae_data[i]) for i in list(pae_data.keys())[:-1]])
+        except:
+            # parsing CollabFold data
+            _json_obj = open(self._dir)
+            pae_data = json.load(_json_obj)
+            _json_obj.close()
+            return np.array(pae_data['pae'])
+
+
+
 
     def plot(self, title):
         """

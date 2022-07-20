@@ -46,7 +46,7 @@ def main(results, outfile, title):
 if __name__ == "__main__":
     p = argparse.ArgumentParser(
         prog='alphaParser', add_help=True,
-        description='A python software to parse AlphaFold results into PyMOL PSE and PAE error plots.',
+        description='A python software to parse AlphaFold results into PyMOL PSE and PAE plots.',
     )
     p.add_argument('results', help='''
         the `results` directory or zipfile produced from your AlphaFold prediction. Files will have same name 
