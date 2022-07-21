@@ -34,8 +34,7 @@ mv alphaParser/alphaParser.pyz /usr/local/bin
 If you don't have `sudo` access simply `mv` to your local bin.
 
 ```bash
-cd ~
-mkdir bin # do this only if you don't have one yet
+mkdir ~/bin # do this only if you don't have one yet
 mv <location of the repository>/alphaParser/alphaParser.pyz ~/bin
 echo 'export PATH="$HOME/bin:$PATH"' >> ~/.profile
 source ~/.profile
@@ -46,21 +45,23 @@ Once in your path, call `alphaParser`
 alphaParser.pyz -h
 ```
 You should get the following help message back
-```bash
+```text
 usage: alphaParser [-h] [-o OUTPUT] [-t TITLE] results
 
 A python software to parse AlphaFold results into PyMOL PSE and PAE plots.
 
 positional arguments:
-  results               the `results` directory or zipfile produced from your AlphaFold prediction. Files will have same name as the zipfile/directory given. To change
-                        the output file names for the pse and png files use '-o'/'--output' metavar.
+  results               the `results` directory or zipfile produced from your AlphaFold prediction. Files will have same 
+                        name as the zipfile/directory given. To change the output file names for the pse and png files 
+                        use '-o'/'--output' metavar.
 
 optional arguments:
   -h, --help            show this help message and exit
   -o OUTPUT, --output OUTPUT
                         name of the output pse and png files to use.
   -t TITLE, --title TITLE
-                        The desired title for your PAE plot, remember to wrap the title in quotations. Example: "PAE Plot"
+                        The desired title for your PAE plot, remember to wrap the title in quotations. 
+                        Example: "PAE Plot"
 ```
 
 ## Running `alphaParser`
